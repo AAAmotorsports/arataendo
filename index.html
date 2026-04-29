@@ -3,7 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
 <title>Arata Endo — Racing Driver | 2027 F4 Challenge</title>
+<style id="gate-style">html.locked body>*:not(#gate){display:none!important}#gate{position:fixed;inset:0;z-index:99999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,'Inter Tight',sans-serif}html:not(.locked) #gate{display:none}#gate .box{width:min(92vw,380px);padding:2rem;background:#141414;border:1px solid #262626;text-align:center;color:#fff}#gate h1{font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:.18em;margin-bottom:.4rem}#gate p{color:#7a7a7a;font-size:.85rem;margin-bottom:1.4rem}#gate input{width:100%;padding:.8rem 1rem;background:#0a0a0a;border:1px solid #3a3a3a;color:#fff;font-size:1rem;outline:none;margin-bottom:.8rem;font-family:inherit}#gate input:focus{border-color:#e10600}#gate button{width:100%;padding:.8rem 1rem;background:#e10600;border:0;color:#fff;font-weight:600;cursor:pointer;font-family:inherit;letter-spacing:.05em}#gate button:hover{background:#a50400}#gate .err{color:#e10600;font-size:.8rem;min-height:1.2em;margin-top:.6rem}</style>
+<script>
+(function(){
+  var H="b0a49431b00654b2d049b2bbc9761f2de5d3b02ee706efd564c79588a270e077";
+  if(sessionStorage.getItem("arata_ok")==="1")return;
+  document.documentElement.classList.add("locked");
+  async function sha(s){var b=new TextEncoder().encode(s);var d=await crypto.subtle.digest("SHA-256",b);return Array.from(new Uint8Array(d)).map(function(x){return x.toString(16).padStart(2,"0")}).join("")}
+  document.addEventListener("DOMContentLoaded",function(){
+    var g=document.createElement("div");g.id="gate";g.innerHTML='<div class="box"><h1>ARATA<span style="color:#e10600">.</span>ENDO</h1><p>このページはパスワードで保護されています</p><form id="gf"><input id="gp" type="password" autocomplete="off" placeholder="Password" autofocus><button type="submit">Enter</button><div class="err" id="ge"></div></form></div>';
+    document.body.insertBefore(g,document.body.firstChild);
+    document.getElementById("gf").addEventListener("submit",async function(e){
+      e.preventDefault();
+      var v=document.getElementById("gp").value;
+      var h=await sha(v);
+      if(h===H){sessionStorage.setItem("arata_ok","1");document.documentElement.classList.remove("locked");g.remove()}
+      else{document.getElementById("ge").textContent="パスワードが違います";document.getElementById("gp").value="";document.getElementById("gp").focus()}
+    });
+  });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;600&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
